@@ -2,6 +2,8 @@
 var meddiaPLayer = document.querySelector("audio");
 var playMusic = document.querySelector(".play-music");
 
+meddiaPLayer.paused ? meddiaPLayer.play() : meddiaPLayer.pause();
+
 playMusic.onclick = () => {
   meddiaPLayer.paused ? meddiaPLayer.play() : meddiaPLayer.pause();
 };
