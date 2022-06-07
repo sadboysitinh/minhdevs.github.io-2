@@ -49,4 +49,3 @@ function scrollPage(height) {
   window.scrollTo(0, height);
 }
 
-// scrollPage(200);
