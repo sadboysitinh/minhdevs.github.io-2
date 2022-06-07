@@ -1,401 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nguyen Ngoc Minh - MIT</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/c33a9b0eed.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./PureSnow.js"></script>
-    <style>
-      * {
-        transition: 0.3s;
-        box-sizing: content-box !important;
-        -webkit-user-select: none;
-        -webkit-touch-callout: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nguyen Ngoc Minh - MIT</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://kit.fontawesome.com/c33a9b0eed.js" crossorigin="anonymous"></script>
+        <script src="./PureSnow.js"></script>
+        <style>
+            * {
+                transition: 0.3s;
+                box-sizing: content-box !important;
+                -webkit-user-select: none;
+                -webkit-touch-callout: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
 
-      div[class="disclaimer"] {
-        display: none;
-        height: 0px;
-      }
+            div[class="disclaimer"] {
+                display: none;
+                height: 0px;
+            }
 
-      .shadow {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
-      }
+            .shadow {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+            }
 
-      .progress {
-        height: 4px !important;
-      }
+            .progress {
+                height: 4px !important;
+            }
 
-      .shadow:hover {
-        box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2) !important;
-      }
+            .shadow:hover {
+                box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2) !important;
+            }
 
-      html,
-      body {
-        height: 100%;
-      }
+            html,
+            body {
+                height: 100%;
+            }
 
-      .container {
-        width: unset;
-      }
+            .container {
+                width: unset;
+            }
 
-      .play-music {
-        cursor: pointer;
-      }
+            .play-music {
+                cursor: pointer;
+            }
 
-      .user-infomations {
-        min-width: 110px;
-        margin-bottom: 2px;
-      }
+            .user-infomations {
+                min-width: 110px;
+                margin-bottom: 2px;
+            }
 
-      .user-data {
-        bottom: -250px;
-        left: 20px;
-      }
+            .user-data {
+                bottom: -250px;
+                left: 20px;
+            }
 
-      @media only screen and (min-width: 403px) {
-        .user-data {
-          bottom: -110px;
-          left: 20px;
-        }
-      }
+            @media only screen and (min-width: 403px) {
+                .user-data {
+                    bottom: -110px;
+                    left: 20px;
+                }
+            }
 
-      .card.border-0.rounded-3.shadow.text-center.p-2.m-2 {
-        cursor: pointer;
-      }
+            .card.border-0.rounded-3.shadow.text-center.p-2.m-2 {
+                cursor: pointer;
+            }
 
-      @media only screen and (min-width: 995px) {
-        .card-item {
-          width: 800px;
-          margin: 20px auto !important;
-        }
-      }
-    </style>
-  </head>
+            @media only screen and (min-width: 995px) {
+                .card-item {
+                    width: 800px;
+                    margin: 20px auto !important;
+                }
+            }
+        </style>
+    </head>
 
-  <body class="bg-dark">
-    <audio src="music.mp3"></audio>
-    <!-- FACEBOOK MESSAGE -->
-    <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
+    <body class="bg-dark">
+        <audio src="music.mp3"></audio>
+        <!-- FACEBOOK MESSAGE -->
+        <!-- Messenger Plugin chat Code -->
+        <div id="fb-root"></div>
 
-    <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
+        <!-- Your Plugin chat code -->
+        <div id="fb-customer-chat" class="fb-customerchat"></div>
 
-    <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "100584469323230");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+        <script>
+            var chatbox = document.getElementById("fb-customer-chat");
+            chatbox.setAttribute("page_id", "100584469323230");
+            chatbox.setAttribute("attribution", "biz_inbox");
+        </script>
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v13.0",
-        });
-      };
+        <!-- Your SDK code -->
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    xfbml: true,
+                    version: "v13.0",
+                });
+            };
 
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
-    <!-- FACEBOOK MESSAGE -->
-    <div class="container bg-white" title="User Profile">
-      <!-- Header Page -->
-      <div class="header position-relative">
-        <img
-          class="w-100 rounded-bottom"
-          src="banner.png"
-          alt="Banner"
-          title="Banner"
-        />
-        <div class="user-data position-absolute">
-          <div
-            style="width: 150px; height: 150px; box-shadow: 0 0 0 4px white"
-            class="rounded-circle float-start play-music"
-          >
-            <img
-              class="w-100 h-100 rounded-circle"
-              src="avatar.png"
-              alt="avatar.png"
-              title="Avatar"
-            />
-          </div>
-          <h4
-            class="float-end ms-3 mt-2"
-            style="line-height: 150px"
-            title="User Name"
-          >
-            Nguyễn Ngọc Minh
-          </h4>
-        </div>
-      </div>
-      <!-- Margin -->
-      <div style="height: 110px"></div>
-      <!-- Content Page -->
-      <div class="body rounded-3 p-0">
-        <!-- Card 1 -->
-        <div class="card card-item border-0 shadow my-3 mx-0">
-          <h4
-            style="background: #3e4145"
-            class="bg-dark text-white p-2 rounded-top"
-          >
-            About Me
-          </h4>
-          <div class="card-content p-2">
-            <ul>
-              <li>
-                <b class="d-inline-block user-infomations">Fullname: </b
-                ><span>Nguyễn Ngọc Minh</span>
-              </li>
-              <li>
-                <b class="d-inline-block user-infomations">Year of Birth: </b
-                ><span>2003</span>
-              </li>
-              <li>
-                <b class="d-inline-block user-infomations">Workplace: </b>Web
-                Developer
-              </li>
-              <li>
-                <b class="d-inline-block user-infomations">Status: </b
-                ><span>Single</span>
-              </li>
-              <li>
-                <b class="d-inline-block user-infomations">Education: </b
-                ><span>Cao đẳng FPT Polytechnic</span>
-              </li>
-              <li>
-                <b class="d-inline-block user-infomations">Current City: </b
-                ><span>Xuân Phương, N. Từ liêm, Hà Nội</span>
-              </li>
-              <!-- <b class="badge bg-dark m-2 ms-0 mb-0 shadow">Hobbies</b> -->
-            </ul>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="card card-item border-0 shadow my-3 mx-0">
-          <h4 class="bg-dark text-white p-2 rounded-top">Skills</h4>
-          <div class="p-2">
-            <div class="m-2">
-              <b class="mb-1 text-dark">• HTML/CSS</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-dark"
-                  value="75"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-
-            <div class="m-2">
-              <b class="mb-1 text-secondary">• JavaScript</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-secondary"
-                  value="75"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-
-            <div class="m-2">
-              <b class="mb-1 text-dark">• PHP</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-dark"
-                  value="50"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-
-            <div class="m-2">
-              <b class="mb-1 text-secondary">• Python</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-secondary"
-                  value="55"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-
-            <div class="m-2">
-              <b class="mb-1 text-dark">• Java</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-dark"
-                  value="40"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-
-            <div class="m-2">
-              <b class="mb-1 text-secondary">• C/C++</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-secondary"
-                  value="30"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-
-            <div class="m-2">
-              <b class="mb-1 text-dark">• Linux/Ubuntu</b>
-              <div class="progress">
-                <div
-                  class="progress-bar bg-dark"
-                  value="80"
-                  role="progressbar"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="card card-item border-0 shadow my-3 mx-0">
-          <h4 class="bg-dark text-white p-2 rounded-top">Contacts</h4>
-          <div class="card-content p-2">
-            <a
-              class="text-decoration-none text-dark d-block"
-              href="tel:+84968902516"
-            >
-              <div class="my-2 rounded-3 shadow p-1 d-flex">
-                <i
-                  class="fa-solid fa-phone d-inline-block"
-                  style="padding: 10px; font-size: 30px"
-                ></i>
-                <div class="d-inline-block">
-                  <b class="ms-1">PHONE NUMBER</b>
-                  <p class="ms-1">0968902516 - 0704151934</p>
+            (function (d, s, id) {
+                var js,
+                    fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            })(document, "script", "facebook-jssdk");
+        </script>
+        <!-- FACEBOOK MESSAGE -->
+        <div class="container bg-white" title="User Profile">
+            <!-- Header Page -->
+            <div class="header position-relative">
+                <img class="w-100 rounded-bottom" src="banner.png" alt="Banner" title="Banner" />
+                <div class="user-data position-absolute">
+                    <div style="width: 150px; height: 150px; box-shadow: 0 0 0 4px white;" class="rounded-circle float-start play-music">
+                        <img class="w-100 h-100 rounded-circle" src="avatar.png" alt="avatar.png" title="Avatar" />
+                    </div>
+                    <h4 class="float-end ms-3 mt-2" style="line-height: 150px;" title="User Name">
+                        Nguyễn Ngọc Minh
+                    </h4>
                 </div>
-              </div>
-            </a>
-
-            <a
-              class="text-decoration-none text-dark d-block"
-              href="mailto:minhcooimtp@gmail.com"
-            >
-              <div class="my-2 rounded-3 shadow p-1 d-flex">
-                <i
-                  class="fa-solid fa-envelope-open-text d-inline-block"
-                  style="padding: 10px; font-size: 30px"
-                ></i>
-                <div class="d-inline-block">
-                  <b class="ms-1">EMAIL ADDRESS</b>
-                  <p class="ms-1">minhcoimtp@gmail.com</p>
+            </div>
+            <!-- Margin -->
+            <div style="height: 110px;"></div>
+            <!-- Content Page -->
+            <div class="body rounded-3 p-0">
+                <!-- Card 1 -->
+                <div class="card card-item border-0 shadow my-3 mx-0">
+                    <h4 style="background: #3e4145;" class="bg-dark text-white p-2 rounded-top">
+                        About Me
+                    </h4>
+                    <div class="card-content p-2">
+                        <ul>
+                            <li><b class="d-inline-block user-infomations">Fullname: </b><span>Nguyễn Ngọc Minh</span></li>
+                            <li><b class="d-inline-block user-infomations">Year of Birth: </b><span>2003</span></li>
+                            <li><b class="d-inline-block user-infomations">Workplace: </b>Web Developer</li>
+                            <li><b class="d-inline-block user-infomations">Status: </b><span>Single</span></li>
+                            <li><b class="d-inline-block user-infomations">Education: </b><span>Cao đẳng FPT Polytechnic</span></li>
+                            <li><b class="d-inline-block user-infomations">Current City: </b><span>Xuân Phương, N. Từ liêm, Hà Nội</span></li>
+                            <!-- <b class="badge bg-dark m-2 ms-0 mb-0 shadow">Hobbies</b> -->
+                        </ul>
+                    </div>
                 </div>
-              </div>
-            </a>
+                <!-- Card 2 -->
+                <div class="card card-item border-0 shadow my-3 mx-0">
+                    <h4 class="bg-dark text-white p-2 rounded-top">Skills</h4>
+                    <div class="p-2">
+                        <div class="m-2">
+                            <b class="mb-1 text-dark">• HTML/CSS</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" value="75" role="progressbar"></div>
+                            </div>
+                        </div>
 
-            <a
-              class="text-decoration-none text-dark d-block"
-              href="https://github.com/minhdevs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="my-2 rounded-3 shadow p-1 d-flex">
-                <i
-                  class="fa-brands fa-github d-inline-block"
-                  style="padding: 10px; font-size: 30px"
-                ></i>
-                <div class="d-inline-block">
-                  <b class="ms-1">GIT HUB</b>
-                  <p class="ms-1">minhdevs</p>
-                </div>
-              </div>
-            </a>
+                        <div class="m-2">
+                            <b class="mb-1 text-secondary">• JavaScript</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" value="75" role="progressbar"></div>
+                            </div>
+                        </div>
 
-            <a
-              class="text-decoration-none text-dark d-block"
-              href="https://t.me/nm_2808"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="my-2 rounded-3 shadow p-1 d-flex">
-                <i
-                  class="fa-brands fa-telegram d-inline-block"
-                  style="padding: 10px; font-size: 30px"
-                ></i>
-                <div class="d-inline-block">
-                  <b class="ms-1">TELEGRAM</b>
-                  <p class="ms-1">@nm_2808</p>
-                </div>
-              </div>
-            </a>
+                        <div class="m-2">
+                            <b class="mb-1 text-dark">• PHP</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" value="50" role="progressbar"></div>
+                            </div>
+                        </div>
 
-            <a
-              class="text-decoration-none text-dark d-block"
-              href="https://www.facebook.com/sadboy.2808"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="my-2 rounded-3 shadow p-1 d-flex">
-                <i
-                  class="fa-brands fa-facebook d-inline-block"
-                  style="padding: 10px; font-size: 30px"
-                ></i>
-                <div class="d-inline-block">
-                  <b class="ms-1">FACEBOOK</b>
-                  <p class="ms-1">@sadboy.2808</p>
+                        <div class="m-2">
+                            <b class="mb-1 text-secondary">• Python</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" value="55" role="progressbar"></div>
+                            </div>
+                        </div>
+
+                        <div class="m-2">
+                            <b class="mb-1 text-dark">• Java</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" value="40" role="progressbar"></div>
+                            </div>
+                        </div>
+
+                        <div class="m-2">
+                            <b class="mb-1 text-secondary">• C/C++</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" value="30" role="progressbar"></div>
+                            </div>
+                        </div>
+
+                        <div class="m-2">
+                            <b class="mb-1 text-dark">• Linux/Ubuntu</b>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" value="80" role="progressbar"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
+                <!-- Card 3 -->
+                <div class="card card-item border-0 shadow my-3 mx-0">
+                    <h4 class="bg-dark text-white p-2 rounded-top">Contacts</h4>
+                    <div class="card-content p-2">
+                        <a class="text-decoration-none text-dark d-block" href="tel:+84968902516">
+                            <div class="my-2 rounded-3 shadow p-1 d-flex">
+                                <i class="fa-solid fa-phone d-inline-block" style="padding: 10px; font-size: 30px;"></i>
+                                <div class="d-inline-block">
+                                    <b class="ms-1">PHONE NUMBER</b>
+                                    <p class="ms-1">0968902516 - 0704151934</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="text-decoration-none text-dark d-block" href="mailto:minhcooimtp@gmail.com">
+                            <div class="my-2 rounded-3 shadow p-1 d-flex">
+                                <i class="fa-solid fa-envelope-open-text d-inline-block" style="padding: 10px; font-size: 30px;"></i>
+                                <div class="d-inline-block">
+                                    <b class="ms-1">EMAIL ADDRESS</b>
+                                    <p class="ms-1">minhcoimtp@gmail.com</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="text-decoration-none text-dark d-block" href="https://github.com/minhdevs" target="_blank" rel="noopener noreferrer">
+                            <div class="my-2 rounded-3 shadow p-1 d-flex">
+                                <i class="fa-brands fa-github d-inline-block" style="padding: 10px; font-size: 30px;"></i>
+                                <div class="d-inline-block">
+                                    <b class="ms-1">GIT HUB</b>
+                                    <p class="ms-1">minhdevs</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="text-decoration-none text-dark d-block" href="https://t.me/nm_2808" target="_blank" rel="noopener noreferrer">
+                            <div class="my-2 rounded-3 shadow p-1 d-flex">
+                                <i class="fa-brands fa-telegram d-inline-block" style="padding: 10px; font-size: 30px;"></i>
+                                <div class="d-inline-block">
+                                    <b class="ms-1">TELEGRAM</b>
+                                    <p class="ms-1">@nm_2808</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="text-decoration-none text-dark d-block" href="https://www.facebook.com/sadboy.2808" target="_blank" rel="noopener noreferrer">
+                            <div class="my-2 rounded-3 shadow p-1 d-flex">
+                                <i class="fa-brands fa-facebook d-inline-block" style="padding: 10px; font-size: 30px;"></i>
+                                <div class="d-inline-block">
+                                    <b class="ms-1">FACEBOOK</b>
+                                    <p class="ms-1">@sadboy.2808</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card card-item border-0 shadow my-3 mx-0">
+                    <h4 class="bg-dark text-white p-2 rounded-top">Payment</h4>
+                    <div class="card-content p-2">
+                        <div class="card border-0 rounded-3 shadow text-center p-2 m-2">
+                            <i class="fa-solid fa-building-columns"></i><b>Vietcombank</b>
+                            <span>1018804659</span>
+                        </div>
+
+                        <div class="card border-0 rounded-3 shadow text-center p-2 m-2">
+                            <i class="fa-solid fa-money-check-dollar"></i><b>Momo</b>
+                            <span>0968902516</span>
+                        </div>
+
+                        <div class="card border-0 rounded-3 shadow text-center p-2 m-2">
+                            <i class="fa-brands fa-paypal"></i><b>Paypal</b>
+                            <span>paypal.me/minhFan</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="footer bg-light text-center shadow-none mt-5 rounded-top border border-3" style="line-height: 50px;">Copyright 2022 © MIT - <b>All rights reserved.</b></div>
         </div>
-        <div class="card card-item border-0 shadow my-3 mx-0">
-          <h4 class="bg-dark text-white p-2 rounded-top">Payment</h4>
-          <div class="card-content p-2">
-            <div class="card border-0 rounded-3 shadow text-center p-2 m-2">
-              <i class="fa-solid fa-building-columns"></i><b>Vietcombank</b>
-              <span>1018804659</span>
-            </div>
-
-            <div class="card border-0 rounded-3 shadow text-center p-2 m-2">
-              <i class="fa-solid fa-money-check-dollar"></i><b>Momo</b>
-              <span>0968902516</span>
-            </div>
-
-            <div class="card border-0 rounded-3 shadow text-center p-2 m-2">
-              <i class="fa-brands fa-paypal"></i><b>Paypal</b>
-              <span>paypal.me/minhFan</span>
-            </div>
-          </div>
-        </div>
-        <div style="clear: both"></div>
-      </div>
-      <div
-        class="footer bg-light text-center shadow-none mt-5 rounded-top border border-3"
-        style="line-height: 50px"
-      >
-        Copyright 2022 © MIT - <b>All rights reserved.</b>
-      </div>
-    </div>
-    <script src="main.js"></script>
-  </body>
+        <script src="main.js"></script>
+    </body>
 </html>
